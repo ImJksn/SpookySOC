@@ -3,7 +3,7 @@
     Purpose: Speed up tasks for security analysts and practitioners primarily revolving around OSINT.
     Author: Jackson Nestler
     Version: 0.0.1
-    Source: PENDING
+    Source: https://gitlab.com/jksn/spookySOC
 """
 
 # General imports
@@ -42,8 +42,13 @@ if __name__ == '__main__':
         ipHandler.threatMinerIP(args.ip)
         ipHandler.hybridAnalysisIP(args.ip, API_KEYS_LIST['HYBRID'])
         ipHandler.urlhausIP(args.ip)
-        #ipHandler.shodanIP(args.ip, API_KEYS_LIST['SHODAN'])
-        #ipHandler.proxyCheck(args.ip)
+
+        # TO DO:
+        # More elegantly use proxyCheck (if proxystatus == 1)
+        # Somehow handle cases where Shodan spits out enormous amounts of data.
+
+        ipHandler.shodanIP(args.ip, API_KEYS_LIST['SHODAN'])
+        ipHandler.proxyCheck(args.ip)
 
     #SayHello.greetUser()
     #MenuHandler.mainMenu()
