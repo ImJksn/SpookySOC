@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Check IPs associated with domains.
 - Check domains associated with IPs.
 - Resolve domains to A records for AbuseIPDB searches.
+- Save query output to a file that's usable and neat.
+  - Text file should have the current day and time as the name, or something unique? 
   
 ## 11 May 2020
 
