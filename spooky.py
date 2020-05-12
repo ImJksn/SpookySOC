@@ -28,27 +28,26 @@ if __name__ == '__main__':
     import argparse
     progDesc = "SpookySOC aims to speed up tasks for security analysts and practitioners, primarily revolving around OSINT."
     parser = argparse.ArgumentParser(description=progDesc)
-    parser.add_argument("-ip", help="an IP address to perform lookups on.")
-    parser.add_argument("-domain", help="a domain to perform lookups on.")
+    parser.add_argument("-ip", action='extend', nargs='+', help="an IP address to perform lookups on.")
+    parser.add_argument("-domain", action='append', nargs='+', help="a domain to perform lookups on.")
     args = parser.parse_args()
-
     API_KEYS_LIST = readAPIKeys()
 
     if args.ip:
-        ipHandler.checkPrivate(args.ip)
-        print(Fore.GREEN + "Looking up IP " + str(args.ip) + Style.RESET_ALL)
-        ipHandler.abuseIPDB(args.ip, API_KEYS_LIST['ABUSEIPDB'])
-        ipHandler.virusTotalIP(args.ip, API_KEYS_LIST['VT'])
-        ipHandler.threatMinerIP(args.ip)
-        ipHandler.hybridAnalysisIP(args.ip, API_KEYS_LIST['HYBRID'])
-        ipHandler.urlhausIP(args.ip)
+        for addr in args.ip:
+            ipHandler.checkPrivate(addr)
+            print(Fore.GREEN + "Looking up IP " + str(addr) + Style.RESET_ALL)
+            ipHandler.abuseIPDB(addr, API_KEYS_LIST['ABUSEIPDB'])
+            ipHandler.virusTotalIP(addr, API_KEYS_LIST['VT'])
+            ipHandler.threatMinerIP(addr)
+            ipHandler.hybridAnalysisIP(addr, API_KEYS_LIST['HYBRID'])
+            ipHandler.urlhausIP(addr)
 
-        # TO DO:
-        # More elegantly use proxyCheck (if proxystatus == 1)
-        # Somehow handle cases where Shodan spits out enormous amounts of data.
+            # TO DO:
+            # Somehow handle cases where Shodan spits out enormous amounts of data.
 
-        ipHandler.shodanIP(args.ip, API_KEYS_LIST['SHODAN'])
-        ipHandler.proxyCheck(args.ip)
+            ipHandler.shodanIP(addr, API_KEYS_LIST['SHODAN'])
+            ipHandler.proxyCheck(addr)
 
     #SayHello.greetUser()
     #MenuHandler.mainMenu()

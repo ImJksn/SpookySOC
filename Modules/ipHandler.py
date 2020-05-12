@@ -104,7 +104,6 @@ def hybridAnalysisIP(ipaddr, apikey):
                     jobID = eachresult['job_id']
                     threatScore = eachresult['threat_score']
                     threatDict[jobID] = threatScore
-                    sha256Hash = str(eachresult['sha256'])
                     sortedThreatDict = sorted(threatDict.items(), key=lambda item: item[1])
                     for key, value in sortedThreatDict:
                         print ("Job ID: " + str(key) + " with threat score of " + str(value) + " and SHA256 hash of " + str(eachresult['sha256']))
@@ -131,7 +130,7 @@ def shodanIP(ipaddr, apikey):
     try:
         print (api.host(ipaddr))
 
-    except Exception as e:
+    except:
         text.printRed("No information is available for the IP address.")
 
 def proxyCheck(ipaddr):
@@ -157,4 +156,3 @@ def proxyCheck(ipaddr):
         text.printRed ("  * Determined this is not a proxy based on the reputation .BIN file referenced.")
     else:
         text.printRed ("  * Encountered an error while checking if the IP was a proxy.")
-
