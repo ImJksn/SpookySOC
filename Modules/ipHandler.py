@@ -11,7 +11,7 @@ import ipaddress
 import IP2Proxy
 from Modules import text
 from shodan import Shodan
-from colorama import Fore, Back, Style
+
 
 def checkPrivate(ipaddr):
 
@@ -46,7 +46,7 @@ def virusTotalIP(ipaddr, apikey):
     response = requests.get(url=url, headers=headers)
     if response.status_code == 200:
         returned = response.json()
-        #print("IP: " + str(returned['data']['id']))
+        print("IP: " + str(returned['data']['id']))
         print("Reputation: " + str(returned['data']['attributes']['reputation']))
         print("Harmless Votes: " + str(returned['data']['attributes']['total_votes']['harmless']))
         print("Malicious Votes: " + str(returned['data']['attributes']['total_votes']['malicious']))
@@ -72,7 +72,6 @@ def threatMinerIP(ipaddr):
             assocDomain = value['domain']
             print("Associated Domain #" + str(totalAssoc) + ": " + assocDomain)
             totalAssoc += 1
-    url = "https://api.threatminer.org/v2/host.php"
     params = {'q': ipaddr, 'rt': '4'}
     response = requests.get(url=url, params=params)
     if response.status_code == 200:
