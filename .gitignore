@@ -1,3 +1,6 @@
 
 apiconfig.yaml
 IP2PROXY-LITE-PX8.bin
+.vscode/
+__pycache__
+Modules/__pycache__
