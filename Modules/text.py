@@ -2,7 +2,7 @@
     text.py
     Purpose: Print green or red text, reducing colorama usage in other modules.
     Author: Jackson Nestler
-    Version: 0.0.1
+    Version: BETA
     Source: https://gitlab.com/jksn/spookySOC
 """
 

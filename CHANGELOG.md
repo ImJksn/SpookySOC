@@ -12,7 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Check domains associated with IPs.
 - Resolve domains to A records for AbuseIPDB searches.
 - Save query output to a file that's usable and neat.
-  - Text file should have the current day and time as the name, or something unique? 
+  - Text file should have the current day and time as the name, or something unique?
+- Allow a custom file name for `apiconfig.yaml`
+- Allow a custom file name for the IP2Proxy DB.
+
+## 15 May 2020
+
+- Preparing for the beta testing release!
+- Cleaned up `ipHandler.py` to check for the ThreatMiner results' status code, and print that there were no results found if none were.
+- Added "beta tester" information to `spooky.py`, `iphandler.py`, and `domainHandler.py`.
+- Began constructing the [Wiki](https://gitlab.com/jksn/spookySOC/-/wikis/home).
+- Updated `README.md` with some more project information.
   
 ## 11 May 2020
 

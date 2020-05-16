@@ -2,9 +2,30 @@
     domainHandler.py
     Purpose: Perform domain reputation checks against several services.
     Author: Jackson Nestler
-    Version: 0.0.1
+    Version: BETA
     Source: https://gitlab.com/jksn/spookySOC
 """
+
+"""BETA INFORMATION
+
+SpookySOC is currently in BETA. Changes may occur, including but not limited to the following:
+- Lookup services are added or removed.
+- Format of returned results may change.
+- What information is returned may change.
+- Code format may change.
+- License may change.
+
+As a BETA TESTER, I simply request the following:
+- Follow the LICENSE file from the Git repository -> GNU AGPLv3 license.
+- Report bugs as they occur. Feel free to open a pull request!
+- Give copious feedback, as much as you can. Good, bad, ugly, "unimportant", whatever!
+
+Thanks a bunch! You're awesome.
+
+- Jackson Nestler (@jksn)
+
+"""
+
 import requests
 import time
 import shodan
@@ -39,11 +60,13 @@ def virusTotalDomain(domain, apikey):
 def threatMinerDomain(domain):
     text.printGreen("THREATMINER: https://www.threatminer.org/")
     # API Documentation: https://www.threatminer.org/api.php
-    # Request Type ("RT") 2: Passive DNS
+    # Request types ("RT") are different between domains, IPs, and hashes!
+    # RT 2: Passive DNS
     # RT 4: Related Samples (Hash Only)
     # RT 5: Subdomains
-    # Get DNS information from Passive DNS collection.
+    # RT 6: APTNotes
     url = "https://api.threatminer.org/v2/domain.php"
+    # Get Passive DNS.
     params = {'q': domain, 'rt': '2'}
     response = requests.get(url=url, params=params)
     if response.status_code == 200:
@@ -65,6 +88,8 @@ def threatMinerDomain(domain):
             for value in returned['results']:
                 print("Associated Hash #" + str(totalAssocHash) + ": " + str(value))
                 totalAssocHash += 1
+        else:
+            text.printRed("  * No associated hash values found.")
     # Get associated subdomains.
     params = {'q': domain, 'rt': '5'}
     response = requests.get(url=url, params=params)
