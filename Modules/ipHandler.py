@@ -61,7 +61,7 @@ def abuseIPDB(ipaddr, apikey):
 def virusTotalIP(ipaddr, apikey):
 
     text.printGreen("VIRUSTOTAL: https://www.virustotal.com/gui/")
-    headers = {'x-apikey': '4246257a6c12b545695df7213f3d21509753b5c560732b08d9a56b75a231bfda'}
+    headers = {'x-apikey': apikey}
     url = 'https://virustotal.com/api/v3/ip_addresses/%s' %ipaddr
     response = requests.get(url=url, headers=headers)
     if response.status_code == 200:
