@@ -8,13 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Clean the data provided for IP checks by Shodan, similar to domains.
-- Check IPs associated with domains.
-- Check domains associated with IPs.
+- Check IPs associated with domains. (Beta testing indicates this may not be a desired feature)
+- Check domains associated with IPs. (Beta testing indicates this may not be a desired feature)
 - Resolve domains to A records for AbuseIPDB searches.
 - Save query output to a file that's usable and neat.
   - Text file should have the current day and time as the name, or something unique?
 - Allow a custom file name for `apiconfig.yaml`
 - Allow a custom file name for the IP2Proxy DB.
+  
+## 8 August 2020
+
+It's been a while since there was a (public) update! I've been working on a lot behind-the-scenes, including a complete rewrite with GUI.
+This won't be ready in time for the university's SIP presentation though, so I'm adding some minor changes here pre-presentation.
+
+- Added the ability to look up file hashes against VirusTotal and ThreatMiner (more coming soon!)
+- Worked with beta testers to more clearly outline functionality, and have updated the [unreleased](#unreleased) section accordingly.
+- Researched how to best handle text output and we have a few options. For right now, it's recommended that users copy and paste the data as plaintext (`ctrl + shift + v`)
+- Removed a hard coded VirusTotal API key and revoked the key. Learning experiences! Thanks to the tester who found this.
+- Working on a code reformat.
 
 ## 15 May 2020
 
