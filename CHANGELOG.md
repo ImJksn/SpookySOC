@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Compile into an optional Windows executable and provide as a "release."
 - Clean the data provided for IP checks by Shodan, similar to domains.
 - Check IPs associated with domains. (Beta testing indicates this may not be a desired feature)
 - Check domains associated with IPs. (Beta testing indicates this may not be a desired feature)
