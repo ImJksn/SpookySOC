@@ -32,6 +32,7 @@ import yaml
 from colorama import Fore, Back, Style
 from Modules import ipHandler
 from Modules import domainHandler
+from Modules import hashHandler
 from Modules import text
 
 def readAPIKeys():
@@ -55,6 +56,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=progDesc)
     parser.add_argument("--ip", action='extend', nargs='+', help="an IP address to perform lookups on.")
     parser.add_argument("--domain", action='extend', nargs='+', help="a domain to perform lookups on.")
+    parser.add_argument("--hash", action='extend', nargs='+', help="a MD5, SHA256, or SHA512 hash.")
     # For an unknown reason, action='append' doesn't work, you need 'extend'.
     # Reference: https://docs.python.org/3/library/argparse.html#action
     parser.add_argument('--associatedips', help="[INACTIVE] Including this flag will check IPs associated with a domain. Exclude this flag to not check.", action='store_true')
@@ -94,3 +96,9 @@ if __name__ == '__main__':
             domainHandler.threatMinerDomain(domain)
             domainHandler.hybridAnalysisDomain(domain, API_KEYS_LIST['HYBRID'])
             domainHandler.shodanDomain(domain, API_KEYS_LIST['SHODAN'])
+    if args.hash:
+        for filehash in args.hash:
+            text.printGreen("Looking up hash " + str(filehash))
+            #hashHandler.virusTotalHash(filehash, API_KEYS_LIST['VT'])
+            hashHandler.threatMinerHash(filehash)
+
