@@ -99,6 +99,6 @@ if __name__ == '__main__':
     if args.hash:
         for filehash in args.hash:
             text.printGreen("Looking up hash " + str(filehash))
-            #hashHandler.virusTotalHash(filehash, API_KEYS_LIST['VT'])
+            hashHandler.virusTotalHash(filehash, API_KEYS_LIST['VT'])
             hashHandler.threatMinerHash(filehash)
 
