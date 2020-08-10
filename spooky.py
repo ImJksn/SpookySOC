@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
     if args.domain:
         for domain in args.domain:
-            text.printGreen("Looking up IP " + str(domain))
+            text.printGreen("Looking up domain " + str(domain))
             domainHandler.virusTotalDomain(domain, API_KEYS_LIST['VT'])
             domainHandler.threatMinerDomain(domain)
             domainHandler.hybridAnalysisDomain(domain, API_KEYS_LIST['HYBRID'])

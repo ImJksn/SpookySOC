@@ -1,0 +1,18 @@
+[32mLooking up IP jksn.xyz[0m
+[32mVIRUSTOTAL: https://www.virustotal.com/gui/[0m
+Domain: jksn.xyz
+Reputation: 0
+Harmless Votes: 0
+Malicious Votes: 0
+Registered at: 2019-11-16 22:05:06 UTC.
+[32mTHREATMINER: https://www.threatminer.org/[0m
+[31m  * No passive DNS records found.[0m
+[31m  * No associated hash values found.[0m
+[31m  * No associated subdomains found.[0m
+[31m  * No associated APTNotes found.[0m
+[32mHYBRID ANALYSIS: https://www.hybrid-analysis.com/[0m
+[32m  * Utilizes the CrowdStrike Falcon Sandbox.[0m
+[31m  * No results for that IP address on Hybrid-Analysis.[0m
+[32mSHODAN: https://www.shodan.io/[0m
+[32m  * Maximum associated IPs returned is 100.[0m
+Results found: 0
