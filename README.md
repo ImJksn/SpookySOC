@@ -1,4 +1,4 @@
-# SpookySOC - CURRENTLY IN BETA
+# SpookySOC - Easy Threat Reputation
 
 SpookySOC is designed to allow security practitioners to speed up parts of their workflow, primarily OSINT and reputation analysis.
 
@@ -11,7 +11,8 @@ Users will be able to have this information written to a flat-text file on their
 
 ## Getting Started
 
-You can find information about getting started on the Wiki, [here](https://github.com/ImJksn/SpookySOC/wiki/Getting-Started).
+You can find information about getting started on the Wiki, [here](https://web.archive.org/web/20201112172402/https://gitlab.com/jksn/spookySOC/-/wikis/Getting-Started).
+* Since I recently moved to GitHub from GitLab, screenshots are broken on the GitHub Wiki. An Archive of the GitLab page is provided for readability. Everything is the same, though.
 
 ## Contributing
 
